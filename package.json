@@ -1,6 +1,6 @@
 {
   "name": "shallow-equal-jit",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "ajihyf",
   "license": "MIT",
   "main": "dist/index.js",
