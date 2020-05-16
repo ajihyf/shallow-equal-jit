@@ -1,5 +1,6 @@
 {
   "name": "shallow-equal-jit",
+  "description": "Fast shallow equal with Just-In-Time compiled compare functions.",
   "version": "1.0.0",
   "author": "ajihyf",
   "license": "MIT",
@@ -7,8 +8,7 @@
   "typings": "dist/index.d.ts",
   "module": "dist/shallow-equal-jit.esm.js",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "engines": {
     "node": ">=10"
