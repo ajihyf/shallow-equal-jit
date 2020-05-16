@@ -37,6 +37,14 @@
     "tslib": "^2.0.0",
     "typescript": "^3.9.2"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajihyf/shallow-equal-jit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ajihyf/shallow-equal-jit/issues"
+  },
+  "homepage": "https://github.com/ajihyf/shallow-equal-jit#readme",
   "keywords": [
     "shallow",
     "equal",

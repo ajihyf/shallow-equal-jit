@@ -1,5 +1,8 @@
 # shallow-equal-jit
 
+[![npm](https://img.shields.io/npm/v/shallow-equal-jit.svg)](https://www.npmjs.com/package/shallow-equal-jit)
+[![Actions Status](https://github.com/ajihyf/shallow-equal-jit/workflows/CI/badge.svg)](https://github.com/ajihyf/shallow-equal-jit/actions)
+
 Fast shallow equal with Just-In-Time compiled compare functions.
 
 ## Installation
