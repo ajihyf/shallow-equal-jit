@@ -1,7 +1,7 @@
 {
   "name": "shallow-equal-jit",
   "description": "Fast shallow equal with Just-In-Time compiled compare functions.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "ajihyf",
   "license": "MIT",
   "main": "dist/index.js",
