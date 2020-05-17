@@ -44,24 +44,35 @@ describe('shallowEqualJIT', () => {
 
   test('typing', () => {
     type Comp<P> = (prop: P) => string;
-    type Props = {
+
+    function memo<P>(comp: Comp<P>, _isEqual: ShallowEqual<P>) {
+      return comp;
+    }
+
+    type PropsA = {
       a: number;
       b?: string;
       c: number;
     };
 
-    const CompA: Comp<Props> = ({ a, b = 'b', c }) => {
+    const CompA: Comp<PropsA> = ({ a, b = 'b', c }) => {
       return String(a) + b + String(c);
     };
-
-    function memo<P>(comp: Comp<P>, _isEqual: ShallowEqual<P>) {
-      return comp;
-    }
 
     memo(CompA, shallowEqualJIT(['a', 'b']));
     memo(CompA, shallowEqualJIT(['a', 'b', 'c']));
 
     // @ts-expect-error
     memo(CompA, shallowEqualJIT(['a', 'd']));
+
+    type PropsB = {};
+
+    const CompB: Comp<PropsB> = () => {
+      return 'hello';
+    };
+
+    memo(CompB, shallowEqualJIT([]));
+    // @ts-expect-error
+    memo(CompB, shallowEqualJIT(['a', 'd']));
   });
 });

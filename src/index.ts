@@ -1,5 +1,9 @@
 export type ShallowEqual<T> = (prev: T, next: T) => boolean;
 
+export function shallowEqualJIT<T extends object>(
+  keys: Array<string & keyof T>,
+  useStrictEq?: boolean
+): ShallowEqual<T>;
 export function shallowEqualJIT(
   keys: [],
   useStrictEq?: boolean
@@ -8,10 +12,6 @@ export function shallowEqualJIT(
   keys: number[],
   useStrictEq?: boolean
 ): ShallowEqual<Array<any>>;
-export function shallowEqualJIT<T extends object>(
-  keys: Array<string & keyof T>,
-  useStrictEq?: boolean
-): ShallowEqual<T>;
 export function shallowEqualJIT(keys: any[], useStrictEq = false): Function {
   const equal = (prev: string, next: string) =>
     useStrictEq ? `${prev} === ${next}` : `Object.is(${prev}, ${next})`;
